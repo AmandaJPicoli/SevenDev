@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SevenDev.Application\SevenDev.Application.csproj" />
+    <ProjectReference Include="..\SevenDev.Domain\SevenDev.Domain.csproj" />
+    <ProjectReference Include="..\SevenDev.Repositories\SevenDev.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>
