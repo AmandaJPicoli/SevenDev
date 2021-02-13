@@ -7110,19 +7110,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gislinda\\.nuget\\packages\\": {}
+    "C:\\Users\\Amanda\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gislinda\\source\\repos\\SevenDev\\src\\Services\\SevenDev.Api\\SevenDev.Api.csproj",
+      "projectUniqueName": "C:\\WORKSPACE\\SevenDev\\src\\Services\\SevenDev.Api\\SevenDev.Api.csproj",
       "projectName": "SevenDev.Api",
-      "projectPath": "C:\\Users\\Gislinda\\source\\repos\\SevenDev\\src\\Services\\SevenDev.Api\\SevenDev.Api.csproj",
-      "packagesPath": "C:\\Users\\Gislinda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gislinda\\source\\repos\\SevenDev\\src\\Services\\SevenDev.Api\\obj\\",
+      "projectPath": "C:\\WORKSPACE\\SevenDev\\src\\Services\\SevenDev.Api\\SevenDev.Api.csproj",
+      "packagesPath": "C:\\Users\\Amanda\\.nuget\\packages\\",
+      "outputPath": "C:\\WORKSPACE\\SevenDev\\src\\Services\\SevenDev.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Gislinda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Amanda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7136,11 +7136,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Gislinda\\source\\repos\\SevenDev\\src\\Modules\\SevenDev.Application\\SevenDev.Application.csproj": {
-              "projectPath": "C:\\Users\\Gislinda\\source\\repos\\SevenDev\\src\\Modules\\SevenDev.Application\\SevenDev.Application.csproj"
+            "C:\\WORKSPACE\\SevenDev\\src\\Modules\\SevenDev.Application\\SevenDev.Application.csproj": {
+              "projectPath": "C:\\WORKSPACE\\SevenDev\\src\\Modules\\SevenDev.Application\\SevenDev.Application.csproj"
             },
-            "C:\\Users\\Gislinda\\source\\repos\\SevenDev\\src\\Modules\\SevenDev.Repositories.IoC\\SevenDev.Repositories.IoC.csproj": {
-              "projectPath": "C:\\Users\\Gislinda\\source\\repos\\SevenDev\\src\\Modules\\SevenDev.Repositories.IoC\\SevenDev.Repositories.IoC.csproj"
+            "C:\\WORKSPACE\\SevenDev\\src\\Modules\\SevenDev.Repositories.IoC\\SevenDev.Repositories.IoC.csproj": {
+              "projectPath": "C:\\WORKSPACE\\SevenDev\\src\\Modules\\SevenDev.Repositories.IoC\\SevenDev.Repositories.IoC.csproj"
             }
           }
         }
@@ -7190,7 +7190,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

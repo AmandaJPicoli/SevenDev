@@ -1,12 +1,3 @@
-C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\bin\Debug\netcoreapp3.1\SevenDev.Domain.deps.json
-C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\bin\Debug\netcoreapp3.1\SevenDev.Domain.dll
-C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\bin\Debug\netcoreapp3.1\SevenDev.Domain.pdb
-C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.csprojAssemblyReference.cache
-C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.AssemblyInfoInputs.cache
-C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.AssemblyInfo.cs
-C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.csproj.CoreCompileInputs.cache
-C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.dll
-C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.pdb
 C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Domain\bin\Debug\netcoreapp3.1\SevenDev.Domain.deps.json
 C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Domain\bin\Debug\netcoreapp3.1\SevenDev.Domain.dll
 C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Domain\bin\Debug\netcoreapp3.1\SevenDev.Domain.pdb
@@ -16,3 +7,12 @@ C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\ne
 C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.csproj.CoreCompileInputs.cache
 C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.dll
 C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.pdb
+C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\bin\Debug\netcoreapp3.1\SevenDev.Domain.deps.json
+C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\bin\Debug\netcoreapp3.1\SevenDev.Domain.dll
+C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\bin\Debug\netcoreapp3.1\SevenDev.Domain.pdb
+C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.csprojAssemblyReference.cache
+C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.AssemblyInfoInputs.cache
+C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.AssemblyInfo.cs
+C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.csproj.CoreCompileInputs.cache
+C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.dll
+C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Domain\obj\Debug\netcoreapp3.1\SevenDev.Domain.pdb
