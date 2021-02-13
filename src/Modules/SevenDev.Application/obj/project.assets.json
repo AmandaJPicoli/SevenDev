@@ -5394,19 +5394,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Amanda\\.nuget\\packages\\": {}
+    "C:\\Users\\Gislinda\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\WORKSPACE\\SevenDev\\src\\Modules\\SevenDev.Application\\SevenDev.Application.csproj",
+      "projectUniqueName": "C:\\Users\\Gislinda\\source\\repos\\SevenDev\\src\\Modules\\SevenDev.Application\\SevenDev.Application.csproj",
       "projectName": "SevenDev.Application",
-      "projectPath": "C:\\WORKSPACE\\SevenDev\\src\\Modules\\SevenDev.Application\\SevenDev.Application.csproj",
-      "packagesPath": "C:\\Users\\Amanda\\.nuget\\packages\\",
-      "outputPath": "C:\\WORKSPACE\\SevenDev\\src\\Modules\\SevenDev.Application\\obj\\",
+      "projectPath": "C:\\Users\\Gislinda\\source\\repos\\SevenDev\\src\\Modules\\SevenDev.Application\\SevenDev.Application.csproj",
+      "packagesPath": "C:\\Users\\Gislinda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gislinda\\source\\repos\\SevenDev\\src\\Modules\\SevenDev.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Amanda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gislinda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5420,8 +5420,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\WORKSPACE\\SevenDev\\src\\Modules\\SevenDev.Domain\\SevenDev.Domain.csproj": {
-              "projectPath": "C:\\WORKSPACE\\SevenDev\\src\\Modules\\SevenDev.Domain\\SevenDev.Domain.csproj"
+            "C:\\Users\\Gislinda\\source\\repos\\SevenDev\\src\\Modules\\SevenDev.Domain\\SevenDev.Domain.csproj": {
+              "projectPath": "C:\\Users\\Gislinda\\source\\repos\\SevenDev\\src\\Modules\\SevenDev.Domain\\SevenDev.Domain.csproj"
             }
           }
         }
@@ -5450,7 +5450,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

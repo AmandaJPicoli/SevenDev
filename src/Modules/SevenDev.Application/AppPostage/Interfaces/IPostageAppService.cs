@@ -9,5 +9,6 @@ namespace SevenDev.Application.AppPostage.Interfaces
     {
         Task<Postage> InsertAsync(PostageInput input);
         Task<List<Postage>> GetPostageByUserIdAsync();
+        Task<List<Postage>> GetAlbum();
     }
 }

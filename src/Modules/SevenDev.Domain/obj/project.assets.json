@@ -5376,19 +5376,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Amanda\\.nuget\\packages\\": {}
+    "C:\\Users\\Gislinda\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\WORKSPACE\\SevenDev\\src\\Modules\\SevenDev.Domain\\SevenDev.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Gislinda\\Source\\Repos\\SevenDev\\src\\Modules\\SevenDev.Domain\\SevenDev.Domain.csproj",
       "projectName": "SevenDev.Domain",
-      "projectPath": "C:\\WORKSPACE\\SevenDev\\src\\Modules\\SevenDev.Domain\\SevenDev.Domain.csproj",
-      "packagesPath": "C:\\Users\\Amanda\\.nuget\\packages\\",
-      "outputPath": "C:\\WORKSPACE\\SevenDev\\src\\Modules\\SevenDev.Domain\\obj\\",
+      "projectPath": "C:\\Users\\Gislinda\\Source\\Repos\\SevenDev\\src\\Modules\\SevenDev.Domain\\SevenDev.Domain.csproj",
+      "packagesPath": "C:\\Users\\Gislinda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gislinda\\Source\\Repos\\SevenDev\\src\\Modules\\SevenDev.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Amanda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gislinda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5442,7 +5442,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

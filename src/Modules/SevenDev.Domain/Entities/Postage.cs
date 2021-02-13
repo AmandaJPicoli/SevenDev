@@ -15,6 +15,7 @@ namespace SevenDev.Domain.Entities
 
         public Postage(int id,
                         string text,
+                        string foto,
                         int userId,
                         DateTime created)
         {
@@ -22,12 +23,14 @@ namespace SevenDev.Domain.Entities
             Text = text;
             UserId = userId;
             Created = created;
+            Foto = foto;
         }
 
         public int Id { get; private set; }
         public int UserId { get; private set; }
         public string Text { get; private set; }
         public DateTime Created { get; private set; }
+        public string Foto { get; private set; }
 
         public void SetId(int id)
         {
