@@ -19,6 +19,49 @@ namespace SevenDev.Repositories
             _configuration = configuration;
         }
 
+        public async Task<List<Postage>> GetAlbum(int userId)
+        {
+            using (var con = new SqlConnection(_configuration["ConnectionString"]))
+            {
+                var sqlCmd = @$"SELECT Id,
+	                                   UsuarioId,
+                                       Texto,
+                                       Foto,
+                                       Criacao
+                                FROM 
+	                                Postagem
+                                WHERE 
+	                                UsuarioId= '{userId}'
+                                    and foto != null and foto != '' ";
+
+                using (var cmd = new SqlCommand(sqlCmd, con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    var reader = await cmd
+                                        .ExecuteReaderAsync()
+                                        .ConfigureAwait(false);
+
+                    var postagesForAlbum = new List<Postage>();
+
+                    while (reader.Read())
+                    {
+                        var postage = new Postage(int.Parse(reader["Id"].ToString()),
+                                                    reader["Texto"].ToString(),
+                                                    reader["Foto"].ToString(),
+                                                    int.Parse(reader["UsuarioId"].ToString()),
+                                                    DateTime.Parse(reader["Criacao"].ToString()));
+
+                        postagesForAlbum.Add(postage);
+                    }
+
+                    return postagesForAlbum;
+
+                }
+            }
+        }
+
         public async Task<List<Postage>> GetPostageByUserIdAsync(int userId)
         {
             using (var con = new SqlConnection(_configuration["ConnectionString"]))
@@ -47,6 +90,7 @@ namespace SevenDev.Repositories
                     {
                         var postage = new Postage(int.Parse(reader["Id"].ToString()),
                                                     reader["Texto"].ToString(),
+                                                    reader["Foto"].ToString(),
                                                     int.Parse(reader["UsuarioId"].ToString()),
                                                     DateTime.Parse(reader["Criacao"].ToString()));
 

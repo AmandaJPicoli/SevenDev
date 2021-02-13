@@ -129,5 +129,23 @@ namespace SevenDev.Api.Controllers
                 return BadRequest(arg.Message);
             }
         }
+        [Authorize]
+        [HttpGet]
+        [Route("Album")]
+        public async Task<IActionResult> GetAlbum()
+        {
+            try
+            {
+                var album = await _postageAppService
+                                        .GetAlbum()
+                                        .ConfigureAwait(false);
+
+                return Ok(album);
+            }
+            catch (ArgumentException arg)
+            {
+                return BadRequest(arg.Message);
+            }
+        }
     }
 }

@@ -10,3 +10,15 @@ C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Application\obj\Debug\netcoreapp3.1\S
 C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Application\obj\Debug\netcoreapp3.1\SevenDev.Application.csproj.CopyComplete
 C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Application\obj\Debug\netcoreapp3.1\SevenDev.Application.dll
 C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Application\obj\Debug\netcoreapp3.1\SevenDev.Application.pdb
+C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Application\bin\Debug\netcoreapp3.1\SevenDev.Application.deps.json
+C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Application\bin\Debug\netcoreapp3.1\SevenDev.Application.dll
+C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Application\bin\Debug\netcoreapp3.1\SevenDev.Application.pdb
+C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Application\bin\Debug\netcoreapp3.1\SevenDev.Domain.dll
+C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Application\bin\Debug\netcoreapp3.1\SevenDev.Domain.pdb
+C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Application\obj\Debug\netcoreapp3.1\SevenDev.Application.csprojAssemblyReference.cache
+C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Application\obj\Debug\netcoreapp3.1\SevenDev.Application.AssemblyInfoInputs.cache
+C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Application\obj\Debug\netcoreapp3.1\SevenDev.Application.AssemblyInfo.cs
+C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Application\obj\Debug\netcoreapp3.1\SevenDev.Application.csproj.CoreCompileInputs.cache
+C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Application\obj\Debug\netcoreapp3.1\SevenDev.Application.csproj.CopyComplete
+C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Application\obj\Debug\netcoreapp3.1\SevenDev.Application.dll
+C:\Users\Gislinda\source\repos\SevenDev\src\Modules\SevenDev.Application\obj\Debug\netcoreapp3.1\SevenDev.Application.pdb

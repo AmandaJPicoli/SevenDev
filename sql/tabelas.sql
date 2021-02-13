@@ -30,6 +30,7 @@ CREATE TABLE dbo.Postagem (
    Id int IDENTITY(1,1) NOT NULL,
    UsuarioId int NOT NULL,
    Texto varchar(250) NOT NULL,
+   Foto varchar(500) NULL,
    Criacao DateTime NOT NULL,
    CONSTRAINT PK_Postagem_Id PRIMARY KEY CLUSTERED (Id)
 )

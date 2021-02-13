@@ -20,6 +20,16 @@ namespace SevenDev.Application.AppPostage
             _logged = logged;
         }
 
+        public async Task<List<Postage>> GetAlbum()
+        {
+            var userId = _logged.GetUserLoggedId();
+
+            var album = await _postageRepository
+                                    .GetAlbum(userId)
+                                    .ConfigureAwait(false);
+            return album;
+        }
+
         public async Task<List<Postage>> GetPostageByUserIdAsync()
         {
             var userId = _logged.GetUserLoggedId();
