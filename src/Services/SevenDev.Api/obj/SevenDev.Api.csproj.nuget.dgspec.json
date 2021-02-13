@@ -98,6 +98,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AWSSDK.Core": {
+              "target": "Package",
+              "version": "[3.5.2.10, )"
+            },
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[3.5.8.5, )"
+            },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -183,6 +191,10 @@
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[3.1.12, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[6.0.4, )"
             }
           },
           "imports": [
@@ -196,6 +208,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

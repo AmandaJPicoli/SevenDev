@@ -40,6 +40,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AWSSDK.Core": {
+              "target": "Package",
+              "version": "[3.5.2.10, )"
+            },
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[3.5.8.5, )"
+            },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
               "version": "[2.2.0, )"

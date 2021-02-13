@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ftGRYcaCcz/eTaHGpeuGbAYE6SKzCsjOY4RFxTRgFgr8SfaNLPvl5jsmm7B+y8NQYKWaHKJoZ0+Fv8UA+KAGZw==",
+  "dgSpecHash": "6VTPzh7SYeLhLd8Qx+xUPBjzjGHTbVXBR5a3i3p4FTx+gyMbAgrIM1EewLnwHHPoKqAGgTnm18eN5qNUHEu23Q==",
   "success": true,
   "projectFilePath": "C:\\WORKSPACE\\SevenDev\\src\\Modules\\SevenDev.Repositories\\SevenDev.Repositories.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Amanda\\.nuget\\packages\\awssdk.core\\3.5.2.10\\awssdk.core.3.5.2.10.nupkg.sha512",
+    "C:\\Users\\Amanda\\.nuget\\packages\\awssdk.s3\\3.5.8.5\\awssdk.s3.3.5.8.5.nupkg.sha512",
     "C:\\Users\\Amanda\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Amanda\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Amanda\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

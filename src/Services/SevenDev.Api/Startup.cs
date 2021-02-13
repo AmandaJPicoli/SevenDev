@@ -25,6 +25,34 @@ namespace SevenDev.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SevenDev", Version = "v1" });
+
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = "Para validar o authorize escreva: Bearer {token}\"",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id ="Bearer"
+                            }
+                        },
+                        Array.Empty<string>()
+                    }
+                });
+            });
 
             var key = Encoding.ASCII.GetBytes(Configuration.GetSection("Secrets").Value);
 
@@ -45,16 +73,6 @@ namespace SevenDev.Api
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
-            });
-
-            services.AddSwaggerGen(c => {
-                c.SwaggerDoc("v1",
-                    new OpenApiInfo
-                    {
-                        Title = "SevenDev",
-                        Version = "v1",
-                        Description = "Api das meninas da Gama",
-                    });
             });
 
             RegisterServices(services);
@@ -79,7 +97,8 @@ namespace SevenDev.Api
             });
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => {
+            app.UseSwaggerUI(c =>
+            {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "SevenDev");
             });
         }

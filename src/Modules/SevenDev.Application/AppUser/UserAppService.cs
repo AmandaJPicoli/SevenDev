@@ -97,7 +97,7 @@ namespace SevenDev.Application.AppUser
                 throw new ArgumentException("O gênero que está tentando associar ao usuário não existe!");
             }
 
-            user.UpdateInfo(updateInput.Email, updateInput.Password, updateInput.Name, updateInput.Photo,  updateInput.GenderId);
+            user.UpdateInfo(updateInput.Email, updateInput.Password, updateInput.Name, updateInput.Photo, updateInput.GenderId);
 
             await _userRepository
                     .UpdateAsync(user)

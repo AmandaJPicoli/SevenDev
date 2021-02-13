@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SevenDev.Application.AppPostage.Input;
 
 namespace SevenDev.Api.Controllers
 {
@@ -23,7 +24,7 @@ namespace SevenDev.Api.Controllers
         [ProducesResponseType(typeof(string), 201)]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
-        public async Task<IActionResult> Upload(IFormFile file)
+        public async Task<IActionResult> Upload(IFormFile file) 
         {
             if (file is null)
                 return BadRequest("Arquivo não carregado!");
@@ -34,8 +35,7 @@ namespace SevenDev.Api.Controllers
             {
                 if (file.Length > 0)
                 {
-                    using (var stream = file.OpenReadStream())
-                        return Ok(await _storageHelper.Upload(stream, file.FileName));
+                        return Ok(await _storageHelper.Upload(file, file.FileName));
                 }
             }
             else
@@ -43,7 +43,7 @@ namespace SevenDev.Api.Controllers
                 return new UnsupportedMediaTypeResult();
             }
 
-            return BadRequest("Erro ao fazero upload!");
+            return BadRequest("Erro ao fazer o upload!");
         }
     }
 }

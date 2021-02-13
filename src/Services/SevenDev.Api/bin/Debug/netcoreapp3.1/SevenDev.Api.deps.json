@@ -317,6 +317,31 @@
           "SevenDev.Api.dll": {}
         }
       },
+      "AWSSDK.Core/3.5.2.10": {
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.5.2.10"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
+        }
+      },
+      "AWSSDK.S3/3.5.8.5": {
+        "dependencies": {
+          "AWSSDK.Core": "3.5.2.10"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.S3.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.5.8.5"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.S3.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Core": "2.2.0",
@@ -1543,6 +1568,8 @@
       },
       "SevenDev.Domain/1.0.0": {
         "dependencies": {
+          "AWSSDK.Core": "3.5.2.10",
+          "AWSSDK.S3": "3.5.8.5",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.12",
           "WindowsAzure.Storage": "9.3.3"
@@ -1573,7 +1600,8 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.12",
           "SevenDev.Application": "1.0.0",
           "SevenDev.Domain": "1.0.0",
-          "SevenDev.Repositories": "1.0.0"
+          "SevenDev.Repositories": "1.0.0",
+          "Swashbuckle.AspNetCore.Swagger": "6.0.4"
         },
         "runtime": {
           "SevenDev.Repositories.IoC.dll": {}
@@ -3263,6 +3291,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AWSSDK.Core/3.5.2.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-alPw//uyS2kagVu1+oUb0U0ffhVi9VonEBfM2BRERjm2HgnhKPoT22NU0CuGsCfY73pj4mzhPbVJdqYWruv7Ng==",
+      "path": "awssdk.core/3.5.2.10",
+      "hashPath": "awssdk.core.3.5.2.10.nupkg.sha512"
+    },
+    "AWSSDK.S3/3.5.8.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QRUb3C8IMUmoMFWty3GtzO3DAq9mcaUZZBMkRazL1PyGi72A2o71N20/4F+4OZSeK+eNZgO1xikG1TKRjFRyzA==",
+      "path": "awssdk.s3/3.5.8.5",
+      "hashPath": "awssdk.s3.3.5.8.5.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "type": "package",

@@ -85,7 +85,10 @@ namespace SevenDev.Domain.Entities
             Name = string.IsNullOrEmpty(nome) ? Name : nome;
             Photo = string.IsNullOrEmpty(foto) ? Photo : foto;
             Email = string.IsNullOrEmpty(email) ? Email : email;
-            //Gender.Id = genderId == null ? Gender.Id : genderId;
+            if (genderId >= 0 && genderId != Gender.Id)
+            {
+                Gender.SetId(genderId);
+            }   
 
             if (!string.IsNullOrEmpty(password) && password != Password)
                 CriptografyPassword(password);

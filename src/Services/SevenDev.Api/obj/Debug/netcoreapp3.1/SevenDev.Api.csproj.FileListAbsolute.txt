@@ -1,4 +1,3 @@
-C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\obj\Debug\netcoreapp3.1\SevenDev.Api.csprojAssemblyReference.cache
 C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\obj\Debug\netcoreapp3.1\SevenDev.Api.AssemblyInfoInputs.cache
 C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\obj\Debug\netcoreapp3.1\SevenDev.Api.AssemblyInfo.cs
 C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\obj\Debug\netcoreapp3.1\SevenDev.Api.csproj.CoreCompileInputs.cache
@@ -41,6 +40,7 @@ C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\bin\Debug\netcoreapp3.1\SevenDev
 C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\bin\Debug\netcoreapp3.1\SevenDev.Repositories.IoC.pdb
 C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\bin\Debug\netcoreapp3.1\SevenDev.Domain.pdb
 C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\bin\Debug\netcoreapp3.1\SevenDev.Repositories.pdb
+C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\obj\Debug\netcoreapp3.1\SevenDev.Api.csprojAssemblyReference.cache
 C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\obj\Debug\netcoreapp3.1\staticwebassets\SevenDev.Api.StaticWebAssets.Manifest.cache
 C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\obj\Debug\netcoreapp3.1\staticwebassets\SevenDev.Api.StaticWebAssets.xml
 C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\obj\Debug\netcoreapp3.1\scopedcss\bundle\SevenDev.Api.styles.css
@@ -49,3 +49,6 @@ C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\obj\Debug\netcoreapp3.1\SevenDev
 C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\obj\Debug\netcoreapp3.1\SevenDev.Api.dll
 C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\obj\Debug\netcoreapp3.1\SevenDev.Api.pdb
 C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\obj\Debug\netcoreapp3.1\SevenDev.Api.genruntimeconfig.cache
+C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\bin\Debug\netcoreapp3.1\AWSSDK.Core.dll
+C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\bin\Debug\netcoreapp3.1\AWSSDK.S3.dll
+C:\WORKSPACE\SevenDev\src\Services\SevenDev.Api\obj\Debug\netcoreapp3.1\SevenDev.Api.MvcApplicationPartsAssemblyInfo.cs

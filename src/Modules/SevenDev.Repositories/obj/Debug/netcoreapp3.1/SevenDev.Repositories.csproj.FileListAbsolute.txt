@@ -1,12 +1,12 @@
+C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\obj\Debug\netcoreapp3.1\SevenDev.Repositories.csprojAssemblyReference.cache
+C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\obj\Debug\netcoreapp3.1\SevenDev.Repositories.AssemblyInfoInputs.cache
+C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\obj\Debug\netcoreapp3.1\SevenDev.Repositories.AssemblyInfo.cs
+C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\obj\Debug\netcoreapp3.1\SevenDev.Repositories.csproj.CoreCompileInputs.cache
 C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\bin\Debug\netcoreapp3.1\SevenDev.Repositories.deps.json
 C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\bin\Debug\netcoreapp3.1\SevenDev.Repositories.dll
 C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\bin\Debug\netcoreapp3.1\SevenDev.Repositories.pdb
 C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\bin\Debug\netcoreapp3.1\SevenDev.Domain.dll
 C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\bin\Debug\netcoreapp3.1\SevenDev.Domain.pdb
-C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\obj\Debug\netcoreapp3.1\SevenDev.Repositories.csprojAssemblyReference.cache
-C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\obj\Debug\netcoreapp3.1\SevenDev.Repositories.AssemblyInfoInputs.cache
-C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\obj\Debug\netcoreapp3.1\SevenDev.Repositories.AssemblyInfo.cs
-C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\obj\Debug\netcoreapp3.1\SevenDev.Repositories.csproj.CoreCompileInputs.cache
 C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\obj\Debug\netcoreapp3.1\SevenDev.Repositories.csproj.CopyComplete
 C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\obj\Debug\netcoreapp3.1\SevenDev.Repositories.dll
 C:\WORKSPACE\SevenDev\src\Modules\SevenDev.Repositories\obj\Debug\netcoreapp3.1\SevenDev.Repositories.pdb
