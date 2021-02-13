@@ -32,7 +32,7 @@ namespace SevenDev.Repositories
 	                                Postagem
                                 WHERE 
 	                                UsuarioId= '{userId}'
-                                    and foto != null and foto != '' ";
+                                    and foto != '' ";
 
                 using (var cmd = new SqlCommand(sqlCmd, con))
                 {
