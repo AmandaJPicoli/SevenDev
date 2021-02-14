@@ -9,5 +9,6 @@ namespace SevenDev.Application.AppUser.Interfaces
         Task<UserViewModel> InsertAsync(UserInput input);
         Task<UserViewModel> GetByIdAsync(int id);
         Task<UserViewModel> UpdateAsync(int id, UserUpdateInput updateInput);
+        Task<ConviteOutPut> InsertInviteAsync(int userIdReceive);
     }
 }

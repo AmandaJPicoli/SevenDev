@@ -9,5 +9,6 @@ namespace SevenDev.Domain.Interfaces
         Task<User> GetByLoginAsync(string login);
         Task<User> GetByIdAsync(int id);
         Task UpdateAsync(User user);
+        Task<int> InsertInviteAsync(int userIdInvited, int userIdReceive);
     }
 }
