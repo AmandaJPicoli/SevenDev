@@ -151,6 +151,45 @@ namespace SevenDev.Repositories
             }
         }
 
+        public async Task<int> InsertInviteAsync(int userIdInvited, int userIdReceive)
+        {
+            using (var con = new SqlConnection(_configuration["ConnectionString"]))
+            {
+                var sqlCmd = @"INSERT INTO
+                                Convite (UsuarioIdConvidou,
+                                           UsuarioIdRecebeu,
+                                           AceitouConvite,
+                                           RecusouConvite,
+                                           DataCriacao
+                                        )
+                                VALUES (@UsuarioIdConvidou,
+                                        @UsuarioIdRecebeu,
+                                        @AceitouConvite,
+                                        @RecusouConvite,
+                                        @DataCriacao
+                                        ); SELECT scope_identity();";
+
+                using (var cmd = new SqlCommand(sqlCmd, con))
+                {
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.Parameters.AddWithValue("UsuarioIdConvidou", userIdInvited);
+                    cmd.Parameters.AddWithValue("UsuarioIdRecebeu", userIdReceive);
+                    cmd.Parameters.AddWithValue("AceitouConvite", false);
+                    cmd.Parameters.AddWithValue("RecusouConvite", false);
+                    cmd.Parameters.AddWithValue("DataCriacao", DateTime.Now);
+                    
+
+                    con.Open();
+                    var id = await cmd
+                                    .ExecuteScalarAsync()
+                                    .ConfigureAwait(false);
+
+                    return int.Parse(id.ToString());
+                }
+            }
+        }
+
         public async Task UpdateAsync(User user)
         {
             try

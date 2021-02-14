@@ -72,5 +72,23 @@ namespace SevenDev.Api.Controllers
                 return BadRequest(arg.Message);
             }
         }
+
+        [HttpPost("ConvidarAmigo")]
+        public async Task<IActionResult> PostInvite([FromBody] int userIdReceive) 
+        {
+            try
+            {
+                var inviteReturn = await _userAppService
+                                        .InsertInviteAsync(userIdReceive)
+                                        .ConfigureAwait(false);
+                
+                return Created("", inviteReturn);
+            }
+            catch (ArgumentException arg)
+            {
+                return BadRequest(arg.Message);
+            }
+        } 
+
     }
 }

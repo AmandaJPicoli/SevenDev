@@ -1,6 +1,7 @@
 ﻿using SevenDev.Application.AppUser.Input;
 using SevenDev.Application.AppUser.Interfaces;
 using SevenDev.Application.AppUser.Output;
+using SevenDev.Domain.Core.Interfaces;
 using SevenDev.Domain.Entities;
 using SevenDev.Domain.Interfaces;
 using System;
@@ -12,12 +13,15 @@ namespace SevenDev.Application.AppUser
     {
         private readonly IGenderRepository _genderRepository;
         private readonly IUserRepository _userRepository;
+        private readonly ILogged _logged;
 
         public UserAppService(IGenderRepository genderRepository,
-                                IUserRepository userRepository)
+                                IUserRepository userRepository,
+                                ILogged logged)
         {
             _genderRepository = genderRepository;
             _userRepository = userRepository;
+            _logged = logged;
         }
         public async Task<UserViewModel> GetByIdAsync(int id)
         {
@@ -75,6 +79,37 @@ namespace SevenDev.Application.AppUser
                 Gender = user.Gender,
                 Photo = user.Photo
             };
+        }
+
+       
+        public async Task<ConviteOutPut> InsertInviteAsync(int userIdReceive)
+        {
+            var userIdInvited = _logged.GetUserLoggedId();
+
+            var invited = await _userRepository
+                                    .InsertInviteAsync(userIdInvited, userIdReceive)
+                                    .ConfigureAwait(false);
+
+            var resposta = new ConviteOutPut();
+
+            if (invited >= 0)
+            {
+                resposta = new ConviteOutPut()
+                {
+                    Message = "Convite enviado com sucesso",
+                    Status = 1
+                };
+            }
+            else
+            {
+                resposta = new ConviteOutPut()
+                {
+                    Message = "Convite não enviado",
+                    Status = 0
+                };
+            }
+
+            return resposta; 
         }
 
         public async Task<UserViewModel> UpdateAsync(int id, UserUpdateInput updateInput)
