@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SevenDev.Domain.Interfaces
+namespace SevenDev.Application.AppGender.Interfaces
 {
-    public interface IGenderRepository
+    public interface IGenderAppService
     {
-        Task<Gender> GetByIdAsync(int id);
         Task<List<Gender>> GetAllGenders();
     }
 }
