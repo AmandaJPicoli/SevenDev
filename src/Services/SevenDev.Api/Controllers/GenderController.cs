@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using SevenDev.Application.AppGender.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace SevenDev.Api.Controllers
 {
+    [EnableCors("MyPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class GenderController : ControllerBase
@@ -21,7 +20,7 @@ namespace SevenDev.Api.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("AllGenders")]
+        [HttpGet("")]
         public async Task<IActionResult> GetAllGenders()
         {
             try
