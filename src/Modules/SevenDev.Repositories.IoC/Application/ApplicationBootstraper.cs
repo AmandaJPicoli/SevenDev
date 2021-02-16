@@ -6,6 +6,8 @@ using SevenDev.Domain.Core;
 using SevenDev.Domain.Core.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using SevenDev.Application.AppGender.Interfaces;
+using SevenDev.Application.AppGender;
 
 namespace SevenDev.Repositories.IoC.Application
 {
@@ -22,6 +24,8 @@ namespace SevenDev.Repositories.IoC.Application
             services.AddScoped<IPostageAppService, PostageAppService>();
             services.AddScoped<ICommentAppService, CommentAppService>();
             services.AddScoped<ILikesAppService, LikesAppService>();
+            services.AddScoped<IGenderAppService, GenderAppService>();
+
         }
     }
 }

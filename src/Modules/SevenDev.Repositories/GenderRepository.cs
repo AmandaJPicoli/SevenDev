@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace SevenDev.Repositories
 {
@@ -14,6 +15,40 @@ namespace SevenDev.Repositories
         public GenderRepository(IConfiguration configuration)
         {
             _configuration = configuration;
+        }
+
+        public async Task<List<Gender>> GetAllGenders()
+        {
+            using (var con = new SqlConnection(_configuration["ConnectionString"]))
+            {
+                var sqlCmd = @$"SELECT 
+                                     Id,
+	                                 Descricao
+                                FROM 
+	                                Genero";
+
+                using (var cmd = new SqlCommand(sqlCmd, con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    var genders = new List<Gender>();
+
+                    var reader = await cmd
+                                        .ExecuteReaderAsync()
+                                        .ConfigureAwait(false);
+
+                    while (reader.Read())
+                    {
+                        var gender = new Gender(reader["Descricao"].ToString());
+                        gender.SetId(int.Parse(reader["Id"].ToString()));
+
+                        genders.Add(gender);
+                    }
+
+                    return genders;
+                }
+            }
         }
 
         public async Task<Gender> GetByIdAsync(int id)

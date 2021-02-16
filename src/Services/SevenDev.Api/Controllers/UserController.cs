@@ -75,7 +75,7 @@ namespace SevenDev.Api.Controllers
         }
 
         [Authorize]
-        [HttpPost("ConvidarAmigo")]
+        [HttpPost("InviteFriends")]
         public async Task<IActionResult> PostInvite([FromQuery] int userIdReceive) 
         {
             try
