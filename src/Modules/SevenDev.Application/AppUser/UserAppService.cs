@@ -84,13 +84,24 @@ namespace SevenDev.Application.AppUser
        
         public async Task<ConviteOutPut> InsertInviteAsync(int userIdReceive)
         {
+            var resposta = new ConviteOutPut();
+
             var userIdInvited = _logged.GetUserLoggedId();
+
+            var inviteExists = await _userRepository
+                                 .GetInviteByIds(userIdInvited, userIdReceive)
+                                 .ConfigureAwait(false);
+
+            if (inviteExists != null)
+            {
+                throw new ApplicationException("Já existe uma solicitação de amizade, aguardando ");
+            }
 
             var invited = await _userRepository
                                     .InsertInviteAsync(userIdInvited, userIdReceive)
                                     .ConfigureAwait(false);
 
-            var resposta = new ConviteOutPut();
+            
 
             if (invited >= 0)
             {

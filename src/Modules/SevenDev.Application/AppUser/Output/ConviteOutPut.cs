@@ -8,5 +8,6 @@ namespace SevenDev.Application.AppUser.Output
     {
         public int Status { get; set; }
         public string Message { get; set; }
+        public DateTime? DateInvited { get; set; }
     }
 }

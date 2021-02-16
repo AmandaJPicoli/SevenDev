@@ -55,6 +55,7 @@ namespace SevenDev.Api.Controllers
             return Ok(user);
         }
 
+        [Authorize]
         [HttpPut]
         [Route("{id}")]
         public async Task<IActionResult> Put([FromRoute] int id, [FromBody] UserUpdateInput userUpdateInput)
@@ -73,8 +74,9 @@ namespace SevenDev.Api.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost("ConvidarAmigo")]
-        public async Task<IActionResult> PostInvite([FromBody] int userIdReceive) 
+        public async Task<IActionResult> PostInvite([FromQuery] int userIdReceive) 
         {
             try
             {
@@ -84,9 +86,10 @@ namespace SevenDev.Api.Controllers
                 
                 return Created("", inviteReturn);
             }
-            catch (ArgumentException arg)
+            catch (ApplicationException ex)
             {
-                return BadRequest(arg.Message);
+                var error = new { erro = ex.Message };
+                return Conflict(error);
             }
         } 
 

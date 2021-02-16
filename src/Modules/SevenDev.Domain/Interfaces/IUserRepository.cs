@@ -10,5 +10,6 @@ namespace SevenDev.Domain.Interfaces
         Task<User> GetByIdAsync(int id);
         Task UpdateAsync(User user);
         Task<int> InsertInviteAsync(int userIdInvited, int userIdReceive);
+        Task<InviteFriends> GetInviteByIds(int userIdInvited, int userIdReceive);
     }
 }

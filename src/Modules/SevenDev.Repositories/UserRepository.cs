@@ -178,7 +178,7 @@ namespace SevenDev.Repositories
                     cmd.Parameters.AddWithValue("AceitouConvite", false);
                     cmd.Parameters.AddWithValue("RecusouConvite", false);
                     cmd.Parameters.AddWithValue("DataCriacao", DateTime.Now);
-                    
+
 
                     con.Open();
                     var id = await cmd
@@ -229,6 +229,51 @@ namespace SevenDev.Repositories
             catch (SqlException ex)
             {
                 throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<InviteFriends> GetInviteByIds(int userIdInvited, int userIdReceive)
+        {
+            using (var con = new SqlConnection(_configuration["ConnectionString"]))
+            {
+                var sqlCmd = @$" SELECT c.Id,
+      		                            c.UsuarioIdConvidou,
+                                        c.UsuarioIdRecebeu,
+                                        c.AceitouConvite,
+                                        c.RecusouConvite,
+                                        c.DataCriacao
+                                   FROM Convite c
+                                  WHERE 
+                                    (c.UsuarioIdConvidou = {userIdReceive} AND	c.UsuarioIdRecebeu = {userIdInvited})
+                                 OR (c.UsuarioIdConvidou = {userIdInvited}  AND	c.UsuarioIdRecebeu = {userIdReceive})
+
+";
+
+                using (var cmd = new SqlCommand(sqlCmd, con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    var reader = await cmd
+                                        .ExecuteReaderAsync()
+                                        .ConfigureAwait(false);
+
+                    while (reader.Read())
+                    {
+                        var invite = new InviteFriends(
+                                            int.Parse(reader["UsuarioIdConvidou"].ToString()),
+                                            int.Parse(reader["UsuarioIdRecebeu"].ToString()),
+                                            bool.Parse(reader["RecusouConvite"].ToString()),
+                                            bool.Parse(reader["AceitouConvite"].ToString()),
+                                            DateTime.Parse(reader["DataCriacao"].ToString()));
+
+                        invite.SetId(int.Parse(reader["id"].ToString()));
+
+                        return invite;
+                    }
+
+                    return default;
+                }
             }
         }
     }
