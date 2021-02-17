@@ -69,6 +69,7 @@ namespace SevenDev.Repositories
                 var sqlCmd = @$"SELECT Id,
 	                                   UsuarioId,
                                        Texto,
+                                       Foto,
                                        Criacao
                                 FROM 
 	                                Postagem

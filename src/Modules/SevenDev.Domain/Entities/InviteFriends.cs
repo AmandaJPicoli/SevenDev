@@ -4,10 +4,14 @@ using System.Text;
 
 namespace SevenDev.Domain.Entities
 {
+    #region Construtor
+
+    #endregion
     public class InviteFriends
     {
-        public InviteFriends(int userIdInvited, 
-            int userIdReceive, 
+        #region Contrutor
+        public InviteFriends(int userIdInvited,
+            int userIdReceive,
             bool inviteDenied,
             bool inviteAccept,
             DateTime dateInvite)
@@ -18,7 +22,9 @@ namespace SevenDev.Domain.Entities
             InviteAccept = inviteAccept;
             DateInvite = dateInvite;
         }
+        #endregion
 
+        #region Propriedades
         public int Id { get; set; }
         public int UserIdInvited { get; set; }
         public int UserIdReceive { get; set; }
@@ -26,9 +32,14 @@ namespace SevenDev.Domain.Entities
         public bool InviteAccept { get; set; }
         public DateTime DateInvite { get; set; }
 
+        #endregion
+
+        #region Metodos
         public void SetId(int id)
         {
             Id = id;
         }
+        #endregion
+
     }
 }

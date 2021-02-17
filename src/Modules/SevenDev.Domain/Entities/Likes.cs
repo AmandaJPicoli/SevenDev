@@ -2,8 +2,9 @@
 {
     public class Likes
     {
+        #region Contrutor
         public Likes(int postageId,
-                        int userId)
+                       int userId)
         {
             PostageId = postageId;
             UserId = userId;
@@ -17,9 +18,13 @@
             PostageId = postageId;
             UserId = userId;
         }
+        #endregion
 
+        #region Propriedades
         public int Id { get; private set; }
         public int PostageId { get; private set; }
         public int UserId { get; private set; }
+        #endregion
+
     }
 }

@@ -2,6 +2,7 @@
 {
     public class Gender
     {
+        #region Construtor
         public Gender(string description)
         {
             Description = description;
@@ -14,9 +15,14 @@
             Description = description;
         }
 
-        public int Id { get; private set; }
-        public string Description { get; private set; }
+        #endregion
 
+        #region propriedades
+         public int Id { get; private set; }
+        public string Description { get; private set; }
+        #endregion
+
+        #region metodos
         public bool IsValid()
         {
             bool valid = true;
@@ -33,5 +39,6 @@
         {
             Id = id;
         }
+        #endregion
     }
 }

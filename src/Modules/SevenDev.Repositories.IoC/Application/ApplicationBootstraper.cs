@@ -25,6 +25,7 @@ namespace SevenDev.Repositories.IoC.Application
             services.AddScoped<ICommentAppService, CommentAppService>();
             services.AddScoped<ILikesAppService, LikesAppService>();
             services.AddScoped<IGenderAppService, GenderAppService>();
+            services.AddScoped<ITimeLineAppService, TimeLineAppService>();
 
         }
     }
