@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
+using SevenDev.Application.AppPostage.Interfaces;
 
 namespace SevenDev.Api.Controllers
 {
@@ -18,10 +19,12 @@ namespace SevenDev.Api.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserAppService _userAppService;
+        private readonly ITimeLineAppService _timeLineAppService;
 
-        public UserController(IUserAppService userAppService)
+        public UserController(IUserAppService userAppService, ITimeLineAppService timeLineAppService)
         {
             _userAppService = userAppService;
+            _timeLineAppService = timeLineAppService;
         }
         
         [AllowAnonymous]
@@ -93,7 +96,25 @@ namespace SevenDev.Api.Controllers
                 var error = new { erro = ex.Message };
                 return Conflict(error);
             }
-        } 
+        }
+
+        [Authorize]
+        [HttpGet("TimeLine")]
+        public async Task<IActionResult> GetTimeLine()
+        {
+            try
+            {
+                var timeLine = await _timeLineAppService
+                                        .GetTimeLineByUserId()
+                                        .ConfigureAwait(false);
+                return Ok(timeLine);
+            }
+            catch (Exception ex)
+            {
+                var error = new { error = ex.Message };
+                return BadRequest(error);
+            }
+        }
 
     }
 }

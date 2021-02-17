@@ -5,12 +5,13 @@ namespace SevenDev.Domain.Entities
 {
     public class User
     {
+        #region Construtor
         public User(string email,
-                     string password,
-                     string name,
-                     DateTime birthday,
-                     Gender gender,
-                     string photo)
+                    string password,
+                    string name,
+                    DateTime birthday,
+                    Gender gender,
+                    string photo)
         {
             Email = email;
             CriptografyPassword(password);
@@ -31,7 +32,9 @@ namespace SevenDev.Domain.Entities
             Gender = gender;
             Photo = photo;
         }
+        #endregion
 
+        #region Propriedades
         public int Id { get; private set; }
         public string Email { get; private set; }
         public string Password { get; private set; }
@@ -39,7 +42,9 @@ namespace SevenDev.Domain.Entities
         public DateTime Birthday { get; private set; }
         public Gender Gender { get; private set; }
         public string Photo { get; private set; }
+        #endregion
 
+        #region Metodo
         public bool IsValid()
         {
             bool valid = true;
@@ -88,10 +93,12 @@ namespace SevenDev.Domain.Entities
             if (genderId >= 0 && genderId != Gender.Id)
             {
                 Gender.SetId(genderId);
-            }   
+            }
 
             if (!string.IsNullOrEmpty(password) && password != Password)
                 CriptografyPassword(password);
         }
+        #endregion
+
     }
 }

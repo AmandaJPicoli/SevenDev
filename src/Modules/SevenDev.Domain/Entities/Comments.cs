@@ -4,9 +4,10 @@ namespace SevenDev.Domain.Entities
 {
     public class Comments
     {
+        #region Construtor
         public Comments(int postageId,
-                         int userId,
-                         string text)
+                       int userId,
+                       string text)
         {
             PostageId = postageId;
             UserId = userId;
@@ -27,16 +28,23 @@ namespace SevenDev.Domain.Entities
             Text = text;
             Created = created;
         }
+        #endregion
 
+        #region Propriedades
         public int Id { get; private set; }
         public int PostageId { get; private set; }
         public int UserId { get; private set; }
         public string Text { get; private set; }
         public DateTime Created { get; private set; }
 
+        #endregion
+
+        #region Metodos
         public void SetId(int id)
         {
             Id = id;
         }
+        #endregion
+
     }
 }

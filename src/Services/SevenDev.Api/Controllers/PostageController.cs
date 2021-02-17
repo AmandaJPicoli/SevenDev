@@ -124,7 +124,8 @@ namespace SevenDev.Api.Controllers
                                         .GetQuantityOfLikesByPostageIdAsync(id)
                                         .ConfigureAwait(false);
 
-                return Ok(quantity);
+                var success = new { quantityLike = quantity };
+                return Ok(success);
             }
             catch (ArgumentException arg)
             {
