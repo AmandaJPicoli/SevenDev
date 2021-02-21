@@ -44,7 +44,7 @@ namespace SevenDev.Application.AppPostage
         {
             var userId = _logged.GetUserLoggedId();
 
-            var postage = new Postage(input.Text, userId);
+            var postage = new Postage(input.Text, input.Foto, userId);
 
             //Validar classe com dados obrigatorios..
 

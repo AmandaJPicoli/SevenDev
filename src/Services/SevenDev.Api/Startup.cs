@@ -26,7 +26,8 @@ namespace SevenDev.Api
         {
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
-                builder.AllowAnyOrigin()
+                builder.WithOrigins("http://localhost:4200/", "http://localhost:53277/api")
+                       .AllowAnyOrigin()
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
@@ -88,6 +89,7 @@ namespace SevenDev.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -95,9 +97,13 @@ namespace SevenDev.Api
 
             app.UseRouting();
 
+            app.UseCors("MyPolicy");
+
             app.UseAuthentication();
             app.UseAuthorization();
-            app.UseCors("MyPolicy");
+           
+            app.UseHttpsRedirection();
+
 
             app.UseEndpoints(endpoints =>
             {

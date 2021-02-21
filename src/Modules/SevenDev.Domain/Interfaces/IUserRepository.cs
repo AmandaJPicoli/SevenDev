@@ -1,4 +1,5 @@
 ﻿using SevenDev.Domain.Entities;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SevenDev.Domain.Interfaces
@@ -11,5 +12,8 @@ namespace SevenDev.Domain.Interfaces
         Task UpdateAsync(User user);
         Task<int> InsertInviteAsync(int userIdInvited, int userIdReceive);
         Task<InviteFriends> GetInviteByIds(int userIdInvited, int userIdReceive);
+        Task AcceptDeniedInviteAsync(int idInvite, int accept, int denied);
+        Task<List<InviteFriends>> GetAllInvitesReceiveAsync(int userIdReceive);
+
     }
 }

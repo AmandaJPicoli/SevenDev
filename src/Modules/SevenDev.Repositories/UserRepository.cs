@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 
 namespace SevenDev.Repositories
 {
@@ -273,6 +274,86 @@ namespace SevenDev.Repositories
                     }
 
                     return default;
+                }
+            }
+        }
+
+        public async Task AcceptDeniedInviteAsync(int idInvite, int accept, int denied)
+        {
+            try
+            {
+                using (var con = new SqlConnection(_configuration["ConnectionString"]))
+                {
+                    var sqlCmd = @$"UPDATE Convite 
+                                    SET AceitouConvite = @aceitouConvite,
+                                        RecusouConvite = @recusouConvite
+                                WHERE   Id = {idInvite}";
+
+
+                    using (var cmd = new SqlCommand(sqlCmd, con))
+                    {
+                        cmd.CommandType = CommandType.Text;
+
+                        cmd.Parameters.AddWithValue("aceitouConvite", accept);
+                        cmd.Parameters.AddWithValue("recusouConvite", denied);
+
+                        con.Open();
+                        await cmd
+                                .ExecuteScalarAsync()
+                                .ConfigureAwait(false);
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<List<InviteFriends>> GetAllInvitesReceiveAsync(int userIdReceive)
+        {
+            using (var con = new SqlConnection(_configuration["ConnectionString"]))
+            {
+                var sqlCmd = @$" SELECT c.Id,
+      		                            c.UsuarioIdConvidou,
+                                        c.UsuarioIdRecebeu,
+                                        c.AceitouConvite,
+                                        c.RecusouConvite,
+                                        c.DataCriacao
+                                   FROM Convite c
+                                  WHERE 
+                                    c.UsuarioIdRecebeu = {userIdReceive}
+                                  AND c.AceitouConvite = 0
+                                  AND c.RecusouConvite = 0";
+
+                using (var cmd = new SqlCommand(sqlCmd, con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    var reader = await cmd
+                                        .ExecuteReaderAsync()
+                                        .ConfigureAwait(false);
+
+                    var invitesReceive = new List<InviteFriends>();
+
+                    while (reader.Read())
+                    {
+                        var invite = new InviteFriends(
+                                            int.Parse(reader["UsuarioIdConvidou"].ToString()),
+                                            int.Parse(reader["UsuarioIdRecebeu"].ToString()),
+                                            bool.Parse(reader["RecusouConvite"].ToString()),
+                                            bool.Parse(reader["AceitouConvite"].ToString()),
+                                            DateTime.Parse(reader["DataCriacao"].ToString()));
+
+                        invite.SetId(int.Parse(reader["id"].ToString()));
+
+                        invitesReceive.Add(invite);
+                    }
+
+                    return invitesReceive;
+
                 }
             }
         }
