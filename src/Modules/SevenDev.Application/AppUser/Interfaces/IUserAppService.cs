@@ -1,5 +1,7 @@
 ﻿using SevenDev.Application.AppUser.Input;
 using SevenDev.Application.AppUser.Output;
+using SevenDev.Domain.Entities;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SevenDev.Application.AppUser.Interfaces
@@ -8,7 +10,10 @@ namespace SevenDev.Application.AppUser.Interfaces
     {
         Task<UserViewModel> InsertAsync(UserInput input);
         Task<UserViewModel> GetByIdAsync(int id);
-        Task<UserViewModel> UpdateAsync(int id, UserUpdateInput updateInput);
+        Task<UserViewModel> UpdateAsync(UserUpdateInput updateInput);
         Task<ConviteOutPut> InsertInviteAsync(int userIdReceive);
+        Task<InviteFriends> AcceptDeniedInvite(InviteFriends invite);
+        Task<List<InviteFriends>> GetAllInvitesReceive();
+
     }
 }

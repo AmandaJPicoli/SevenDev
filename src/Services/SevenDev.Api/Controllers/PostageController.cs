@@ -132,6 +132,7 @@ namespace SevenDev.Api.Controllers
                 return BadRequest(arg.Message);
             }
         }
+
         [Authorize]
         [HttpGet]
         [Route("Album")]

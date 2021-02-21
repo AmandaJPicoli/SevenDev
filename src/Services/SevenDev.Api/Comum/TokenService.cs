@@ -20,7 +20,7 @@ namespace SevenDev.Api.Comum
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.Name, user.Name.ToString()),
-                    new Claim(ClaimTypes.Role, user.Gender.Description),
+                    new Claim(ClaimTypes.Email, user.Email.ToString()),
                     new Claim(JwtRegisteredClaimNames.Jti, user.Id.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(60),

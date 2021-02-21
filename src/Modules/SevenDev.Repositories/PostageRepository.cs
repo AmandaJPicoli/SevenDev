@@ -110,9 +110,11 @@ namespace SevenDev.Repositories
                 var sqlCmd = @"INSERT INTO
                                 Postagem (UsuarioId,
                                            Texto,
+                                           Foto,
                                            Criacao)
                                 VALUES (@usuarioId,
                                         @texto,
+                                        @foto,
                                         @criacao); SELECT scope_identity();";
 
                 using (var cmd = new SqlCommand(sqlCmd, con))
@@ -121,6 +123,7 @@ namespace SevenDev.Repositories
 
                     cmd.Parameters.AddWithValue("usuarioId", postage.UserId);
                     cmd.Parameters.AddWithValue("texto", postage.Text);
+                    cmd.Parameters.AddWithValue("foto", postage.Foto);
                     cmd.Parameters.AddWithValue("criacao", postage.Created);
 
                     con.Open();

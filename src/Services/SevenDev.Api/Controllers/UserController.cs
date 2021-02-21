@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using SevenDev.Application.AppPostage.Interfaces;
+using SevenDev.Domain.Entities;
 
 namespace SevenDev.Api.Controllers
 {
@@ -45,7 +46,6 @@ namespace SevenDev.Api.Controllers
             }
         }
 
-        [Authorize]
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> Get([FromRoute] int id)
@@ -62,13 +62,12 @@ namespace SevenDev.Api.Controllers
 
         [Authorize]
         [HttpPut]
-        [Route("{id}")]
-        public async Task<IActionResult> Put([FromRoute] int id, [FromBody] UserUpdateInput userUpdateInput)
+        public async Task<IActionResult> Put([FromBody] UserUpdateInput userUpdateInput)
         {
             try
             {
                 var user = await _userAppService
-                                    .UpdateAsync(id, userUpdateInput)
+                                    .UpdateAsync(userUpdateInput)
                                     .ConfigureAwait(false);
 
                 return Ok(user);
@@ -108,6 +107,42 @@ namespace SevenDev.Api.Controllers
                                         .GetTimeLineByUserId()
                                         .ConfigureAwait(false);
                 return Ok(timeLine);
+            }
+            catch (Exception ex)
+            {
+                var error = new { error = ex.Message };
+                return BadRequest(error);
+            }
+        }
+
+        [Authorize]
+        [HttpPut("AcceptDeniedInvite")]
+        public async Task<IActionResult> PutInvite([FromBody] InviteFriends invite)
+        {
+            try
+            {
+                var inviteResponse = await _userAppService
+                                    .AcceptDeniedInvite(invite)
+                                    .ConfigureAwait(false);
+
+                return Ok(inviteResponse);
+            }
+            catch (ArgumentException arg)
+            {
+                return BadRequest(arg.Message);
+            }
+        }
+
+        [Authorize]
+        [HttpGet("InviteReceive")]
+        public async Task<IActionResult> GetAllInvitesReceiveById()
+        {
+            try
+            {
+                var invites = await _userAppService
+                                   .GetAllInvitesReceive()
+                                   .ConfigureAwait(false);
+                return Ok(invites);
             }
             catch (Exception ex)
             {

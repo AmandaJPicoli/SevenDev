@@ -6,9 +6,11 @@ namespace SevenDev.Domain.Entities
     {
         #region Construtor
         public Postage(string text,
+                       string foto,
                       int userId)
         {
             Text = text;
+            Foto = foto;
             UserId = userId;
 
             Created = DateTime.Now;

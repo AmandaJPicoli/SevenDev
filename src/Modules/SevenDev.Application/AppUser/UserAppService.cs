@@ -5,6 +5,7 @@ using SevenDev.Domain.Core.Interfaces;
 using SevenDev.Domain.Entities;
 using SevenDev.Domain.Interfaces;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SevenDev.Application.AppUser
@@ -23,6 +24,54 @@ namespace SevenDev.Application.AppUser
             _userRepository = userRepository;
             _logged = logged;
         }
+
+        public async Task<InviteFriends> AcceptDeniedInvite(InviteFriends invite)
+        {
+            var userIdReceive = _logged.GetUserLoggedId();
+
+            var user = await _userRepository
+                            .GetByIdAsync(userIdReceive)
+                            .ConfigureAwait(false);
+
+            if (user == null)
+            {
+                throw new ArgumentException("Usuário não encontrado");
+            }
+
+            invite.UpdateInvite(invite.InviteAccept, invite.InviteDenied);
+
+            var accept = 0;
+            var denied = 0;
+
+            if (invite.InviteAccept)
+            {
+                 accept = 1;
+                 denied = 0;
+            }
+            else
+            {
+                 accept = 0;
+                 denied = 1;
+            }
+                
+
+
+            await _userRepository
+                    .AcceptDeniedInviteAsync(invite.Id, accept, denied)
+                    .ConfigureAwait(false);
+
+            return new InviteFriends()
+            {
+                Id = invite.Id,
+                UserIdInvited = invite.UserIdInvited,
+                UserIdReceive = userIdReceive,
+                InviteDenied = invite.InviteDenied,
+                InviteAccept = invite.InviteAccept,
+                DateInvite = invite.DateInvite
+            };
+
+        }
+
         public async Task<UserViewModel> GetByIdAsync(int id)
         {
             var user = await _userRepository
@@ -81,7 +130,6 @@ namespace SevenDev.Application.AppUser
             };
         }
 
-       
         public async Task<ConviteOutPut> InsertInviteAsync(int userIdReceive)
         {
             var resposta = new ConviteOutPut();
@@ -123,10 +171,12 @@ namespace SevenDev.Application.AppUser
             return resposta; 
         }
 
-        public async Task<UserViewModel> UpdateAsync(int id, UserUpdateInput updateInput)
+        public async Task<UserViewModel> UpdateAsync(UserUpdateInput updateInput)
         {
+            var userId = _logged.GetUserLoggedId();
+
             var user = await _userRepository
-                                     .GetByIdAsync(id)
+                                     .GetByIdAsync(userId)
                                      .ConfigureAwait(false);
 
             if (user is null)
@@ -151,7 +201,7 @@ namespace SevenDev.Application.AppUser
 
             return new UserViewModel()
             {
-                Id = id,
+                Id = userId,
                 Name = user.Name,
                 Birthday = user.Birthday,
                 Email = user.Email,
@@ -160,6 +210,26 @@ namespace SevenDev.Application.AppUser
             };
         }
 
-        
+        public async Task<List<InviteFriends>> GetAllInvitesReceive()
+        {
+            var userId = _logged.GetUserLoggedId();
+
+            var user = await _userRepository
+                                .GetByIdAsync(userId)
+                                .ConfigureAwait(false);
+
+            if (user is null)
+            {
+                throw new ArgumentException("Usuário não encontrado");
+            }
+
+            var invites = await _userRepository
+                                    .GetAllInvitesReceiveAsync(userId)
+                                    .ConfigureAwait(false);
+
+
+            return invites;
+        }
+
     }
 }

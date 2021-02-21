@@ -10,6 +10,21 @@ namespace SevenDev.Domain.Entities
     public class InviteFriends
     {
         #region Contrutor
+        public InviteFriends(
+             int id,
+             int userIdInvited,
+             int userIdReceive,
+             bool inviteDenied,
+             bool inviteAccept,
+             DateTime dateInvite)
+        {
+            Id = id;
+            UserIdInvited = userIdInvited;
+            UserIdReceive = userIdReceive;
+            InviteDenied = inviteDenied;
+            InviteAccept = inviteAccept;
+            DateInvite = dateInvite;
+        }
         public InviteFriends(int userIdInvited,
             int userIdReceive,
             bool inviteDenied,
@@ -21,6 +36,10 @@ namespace SevenDev.Domain.Entities
             InviteDenied = inviteDenied;
             InviteAccept = inviteAccept;
             DateInvite = dateInvite;
+        }
+
+        public InviteFriends()
+        {
         }
         #endregion
 
@@ -38,6 +57,15 @@ namespace SevenDev.Domain.Entities
         public void SetId(int id)
         {
             Id = id;
+        }
+
+        public void UpdateInvite(bool accept,
+                               bool denied
+                               )
+        {
+            
+            InviteAccept = accept;
+            InviteDenied = denied;
         }
         #endregion
 
