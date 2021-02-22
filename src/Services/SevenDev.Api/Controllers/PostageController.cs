@@ -95,9 +95,8 @@ namespace SevenDev.Api.Controllers
         }
 
         [Authorize]
-        [HttpPost]
-        [Route("{id}/Likes")]
-        public async Task<IActionResult> PostLike([FromRoute] int id)
+        [HttpPost("Likes")]
+        public async Task<IActionResult> PostLike([FromBody] int id)
         {
             try
             {

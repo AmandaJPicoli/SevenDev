@@ -43,17 +43,22 @@ namespace SevenDev.Application.AppUser
             var accept = 0;
             var denied = 0;
 
-            if (invite.InviteAccept)
+            if (invite.InviteAccept && !invite.InviteDenied)
             {
                  accept = 1;
                  denied = 0;
             }
-            else
+            else if(!invite.InviteAccept && invite.InviteDenied)
             {
                  accept = 0;
                  denied = 1;
             }
-                
+            else
+            {
+                accept = 0;
+                denied = 0;
+            }
+
 
 
             await _userRepository
