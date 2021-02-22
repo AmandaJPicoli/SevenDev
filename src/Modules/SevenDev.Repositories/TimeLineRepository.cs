@@ -26,14 +26,16 @@ namespace SevenDev.Repositories
         {
             using (var con = new SqlConnection(_configuration["ConnectionString"]))
             {
-                var sqlCmd = @$"select  u0.nome, u0.foto as Perfil, -- INFORMAÇÕES DO USUARIO
-		                                p.Id, p.Texto, p.Foto, p.Criacao as dataPost -- INFORMAÇÕES DA POSTAGEM
-                                   from Convite co
-                                   inner join Usuario u0 on co.UsuarioIdRecebeu = u0.Id -- IDS QUE EU SIGO
-                                   inner join Usuario u1 on co.UsuarioIdConvidou = u1.Id -- ID QUE ESTA LOGADO
-                                   inner join Postagem p on p.UsuarioId = co.UsuarioIdRecebeu -- PEGANDO TODAS AS POSTAGENS DOS IDS QUE EU SIGO
-                                   where u1.Id = '{userIdLogado}' -- QUEM É O ID LOGADO
-                                   order by p.Criacao desc";
+                var sqlCmd = @$"select  u0.nome, u0.foto as Perfil, 
+                                      p.Id, p.Texto, p.Foto, p.Criacao as dataPost
+                                from Convite co
+                                inner join Usuario u0 on (co.UsuarioIdRecebeu = u0.Id and AceitouConvite = 1)
+                                or (co.UsuarioIdConvidou = u0.Id and AceitouConvite = 1)
+                                inner join Usuario u1 on (co.UsuarioIdConvidou = u1.Id and AceitouConvite = 1)
+                                or (co.UsuarioIdRecebeu = u1.Id and AceitouConvite = 1)
+                                inner join Postagem p on p.UsuarioId = u0.Id 
+                                where u1.Id = {userIdLogado}
+                                order by p.Criacao desc";
 
                 using (var cmd = new SqlCommand(sqlCmd, con))
                 {
